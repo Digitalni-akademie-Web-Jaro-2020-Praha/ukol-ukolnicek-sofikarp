@@ -14,8 +14,10 @@ const updateTasks = () => {
 const buttonElm = document.querySelector(".btn-add");
 buttonElm.addEventListener("click", () => {
   const inputElm = document.querySelector("#new-task")
-  tasks.push(inputElm.value);
-  inputElm.value = "";
-  updateTasks();
+  if (inputElm.value) {
+    tasks.push(inputElm.value);
+    inputElm.value = "";
+    updateTasks();
+  }
 })
 
